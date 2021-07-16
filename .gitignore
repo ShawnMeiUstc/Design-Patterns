@@ -416,6 +416,13 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# VisualStudioClassDiagram
+*.cd
+
+# VisualStudioProjectFile
+*.vcxproj
+*.filters
 © 2021 GitHub, Inc.
 Terms
 Privacy
