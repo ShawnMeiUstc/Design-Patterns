@@ -3,8 +3,7 @@
 #include "bridge pattern.h"
 #include "factory pattern.h"
 #include "abstract factory.h"
-
-
+#include "prototype pattern.h"
 
 int main()
 {
@@ -13,8 +12,8 @@ int main()
 	IPublisher* pUser3 = new BridgePatternPublisher();
 	IPublisher* pUser4 = new FactoryPatternPublisher();
 	IPublisher* pUser5 = new AbstractFactoryPublisher();
-
-
+	IPublisher* pUser6 = new PrototypePatternPublisher();
+ 
 	ISubscriber* subscriber = new Subscriber();
 
 	subscriber->DoAttach(pUser1);
@@ -22,6 +21,7 @@ int main()
 	subscriber->DoAttach(pUser3);
 	subscriber->DoAttach(pUser4);
 	subscriber->DoAttach(pUser5);
+	subscriber->DoAttach(pUser6);
 
 
 	subscriber->Run();
