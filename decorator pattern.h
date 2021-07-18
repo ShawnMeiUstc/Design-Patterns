@@ -1,6 +1,6 @@
 #pragma once
 #include "stdc++.h"
-#include "iuser.h"
+#include "ipublisher and isubscriber.h"
 
 class Stream
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "stdc++.h"
-#include "iuser.h"
+#include "ipublisher and isubscriber.h"
 /**
  * Each distinct product of a product family should have a base interface. All
  * variants of the product must implement this interface.

@@ -1,6 +1,6 @@
 #pragma once
 #include "stdc++.h"
-#include "iuser.h"
+#include "ipublisher and isubscriber.h"
 
 /**
  * The Implementation defines the interface for all implementation classes. It

@@ -4,6 +4,7 @@
 #include "factory pattern.h"
 #include "abstract factory.h"
 #include "prototype pattern.h"
+#include "builder pattern.h"
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
 	IPublisher* pUser4 = new FactoryPatternPublisher();
 	IPublisher* pUser5 = new AbstractFactoryPublisher();
 	IPublisher* pUser6 = new PrototypePatternPublisher();
+	IPublisher* pUser7 = new BuiderPatternPublisher();
  
 	ISubscriber* subscriber = new Subscriber();
 
@@ -22,6 +24,7 @@ int main()
 	subscriber->DoAttach(pUser4);
 	subscriber->DoAttach(pUser5);
 	subscriber->DoAttach(pUser6);
+	subscriber->DoAttach(pUser7);
 
 
 	subscriber->Run();
