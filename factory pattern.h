@@ -1,5 +1,4 @@
 #pragma once
-#include "stdc++.h"
 #include "ipublisher and isubscriber.h"
 /**
  * The Product interface declares the operations that all concrete products must
@@ -41,7 +40,7 @@ class Creator {
      */
 public:
     virtual ~Creator() {};
-    virtual AbstractProduct* FactoryMethod() const = 0;
+    virtual unique_ptr<AbstractProduct> FactoryMethod() const = 0;
     /**
      * Also note that, despite its name, the Creator's primary responsibility is
      * not creating products. Usually, it contains some core business logic that
@@ -52,10 +51,9 @@ public:
 
     std::string SomeOperation() const {
         // Call the factory method to create a Product object.
-        AbstractProduct* product = this->FactoryMethod();
+        unique_ptr<AbstractProduct> product = this->FactoryMethod();
         // Now, use the product.
         std::string result = "Creator: The same creator's code has just worked with " + product->Operation();
-        delete product;
         return result;
     }
 };
@@ -71,15 +69,15 @@ class ConcreteCreator1 : public Creator {
      * way the Creator can stay independent of concrete product classes.
      */
 public:
-    virtual AbstractProduct* FactoryMethod() const override {
-        return new ConcreteProduct1();
+    virtual unique_ptr<AbstractProduct> FactoryMethod() const override {
+        return make_unique<ConcreteProduct1>();
     }
 };
 
 class ConcreteCreator2 : public Creator {
 public:
-    virtual AbstractProduct* FactoryMethod() const override {
-        return new ConcreteProduct2();
+    virtual unique_ptr<AbstractProduct> FactoryMethod() const override {
+        return make_unique<ConcreteProduct2>();
     }
 };
 
@@ -107,14 +105,11 @@ public:
     {
         cout << "===============>>>>>>> Test Factory Pattern <<<<<<<===============\n";
         std::cout << "App: Launched with the ConcreteCreator1.\n";
-        Creator* creator = new ConcreteCreator1();
+        unique_ptr<Creator> creator = make_unique<ConcreteCreator1>();
         ClientCode(*creator);
         std::cout << std::endl;
         std::cout << "App: Launched with the ConcreteCreator2.\n";
-        Creator* creator2 = new ConcreteCreator2();
+        unique_ptr<Creator> creator2 = make_unique<ConcreteCreator2>();
         ClientCode(*creator2);
-
-        delete creator;
-        delete creator2;
     }
 };

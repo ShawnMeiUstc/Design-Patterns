@@ -1,5 +1,4 @@
 #pragma once
-#include "stdc++.h"
 #include "ipublisher and isubscriber.h"
 
 class Stream

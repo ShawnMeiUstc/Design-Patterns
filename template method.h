@@ -1,5 +1,4 @@
 #pragma once
-#include "stdc++.h"
 #include "ipublisher and isubscriber.h"
 /**
  * The Abstract Class defines a template method that contains a skeleton of some

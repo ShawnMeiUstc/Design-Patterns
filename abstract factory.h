@@ -1,5 +1,4 @@
 #pragma once
-#include "stdc++.h"
 #include "ipublisher and isubscriber.h"
 /**
  * Each distinct product of a product family should have a base interface. All
